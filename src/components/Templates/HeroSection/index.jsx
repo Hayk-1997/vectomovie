@@ -3,6 +3,7 @@ import Banner from '../../Organisms/Banner';
 import MoviesSwiper from '../../Organisms/MoviesSwiper';
 import { getImageUrl, getVideoUrl } from '../../../../helpers/common.js';
 import { getDefaultMovie } from '../../../../helpers/movies.js';
+import ReactPlayer from 'react-player';
 
 import { Featured as DefaultMovie, TendingNow as Movies } from '../../../mock.json';
 
@@ -34,12 +35,12 @@ const HeroSection = () => {
   return (
     <div className='relative flex flex-col justify-between h-full w-full'>
       {showTrailer ? (
-        <video
-          className='absolute inset-0 w-full h-full object-cover'
+        <ReactPlayer
           src={getVideoUrl(selectedMovie.VideoUrl)}
+          loop={true}
+          muted={true}
           ref={videoRef}
-          muted
-          loop
+          className='absolute inset-0 !w-[100vw] !h-[100vh] object-cover'
         />
       ) : (
         <div
