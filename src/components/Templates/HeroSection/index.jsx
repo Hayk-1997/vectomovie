@@ -35,7 +35,7 @@ const HeroSection = () => {
     <div className='relative flex flex-col justify-between h-full w-full'>
       {showTrailer ? (
         <video
-          className='absolute inset-0 w-full h-full object-cover'
+          className='absolute inset-0 w-full h-[100vh] object-cover'
           src={getVideoUrl(selectedMovie.VideoUrl)}
           ref={videoRef}
           muted
